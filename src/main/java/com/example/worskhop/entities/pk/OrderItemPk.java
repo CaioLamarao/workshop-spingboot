@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 
 import com.example.worskhop.entities.Order;
 import com.example.worskhop.entities.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Embeddable
@@ -20,7 +21,7 @@ public class OrderItemPk implements Serializable{
 	private Order order;
 	
 	@ManyToOne
-	@JoinColumn(name = "product_id")
+	@JoinColumn(name = "product_id ")
 	private Product product;
 	
 	public Order getOrder() {
@@ -29,6 +30,7 @@ public class OrderItemPk implements Serializable{
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+	
 	public Product getProduct() {
 		return product;
 	}
